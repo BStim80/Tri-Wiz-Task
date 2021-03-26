@@ -25,7 +25,7 @@ namespace Tri_Wizard_Interview_Task_Script
         public const float tau = 6.28f;
         
 
-        public Circle(float radius)
+        public Circle(float radius) 
         {
             this.radius = radius;
             this.circumference = tau * radius;           
