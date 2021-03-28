@@ -12,13 +12,14 @@ namespace Tri_Wizard_Interview_Task_Script
     public class TotalPerimeter 
     {
         public float circumference;
-        float TotalP(IShapes ishap)
+
+        float TotalP(IShapes ishap, IShapes ishape)
         {
 		return	ishap.circumference;
         }
     }
 
-    class Circle : IShapes // P = tau * radius
+    public class Circle : IShapes // P = tau * radius
     {
         public float circumference { get; set; }//i removed public keyword from all three of these variables
         public float radius;//radius and tau are declaring the circle class
@@ -37,7 +38,7 @@ namespace Tri_Wizard_Interview_Task_Script
         }        
     }
 
-    class Triangle : IShapes// P = a + b + c
+    public class Triangle : IShapes// P = a + b + c
     {
         public float sideA;
         public float sideB;
@@ -68,7 +69,7 @@ namespace Tri_Wizard_Interview_Task_Script
 
     }
 
-    class Rectangle : IShapes// P = 2(L + W)
+    public class Rectangle : IShapes// P = 2(L + W)
     {
         public float length;
         public float width;
@@ -100,24 +101,18 @@ namespace Tri_Wizard_Interview_Task_Script
             Console.ForegroundColor = ConsoleColor.Green;
             
             Circle circle01 = new Circle(3f);//radius
-            Circle circle02 = new Circle(5f);
 
             circle01.Perimeter();//this is how you are calling these methods
-            circle02.Perimeter();
 
             Triangle triangle01 = new Triangle(2f, 3f, 5f);//length of sides a, b, c
-            Triangle triangle02 = new Triangle(5f, 6f, 5f);
 
             triangle01.Perimeter();
-            triangle02.Perimeter();
 
             Rectangle rectangle01 = new Rectangle(10f, 5f);//length, width
-            Rectangle rectangle02 = new Rectangle(20f, 10f);
 
             rectangle01.Perimeter();
-            rectangle02.Perimeter();
 
-            Console.WriteLine("The total perimeter of all shapes is: " + (circle01.circumference + circle02.circumference + triangle01.circumference + triangle02.circumference + rectangle01.circumference + rectangle02.circumference));
+            Console.WriteLine("The total perimeter of all shapes is: " + (circle01.circumference + triangle01.circumference + rectangle01.circumference));
             //i removed (circle01.perimeter + circle02.perimeter)
                                 
             Console.ReadKey();
