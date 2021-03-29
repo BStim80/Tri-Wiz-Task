@@ -32,7 +32,7 @@ namespace Tri_Wizard_Interview_Task_Script
             this.circumference = tau * radius;           
         }
 
-        public void Perimeter()
+        public void Perimeter()//testing git bash
         {
             Console.WriteLine("Perimeter of circle is " + circumference);    
         }        
