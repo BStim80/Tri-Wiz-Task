@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Tri_Wizard_Interview_Task_Script
+namespace Tri_Wizard_Interview_Task_Script //working out git bash kinks 2
 {
     interface IShapes//todo: add a list, polymorphism, interface and refactor code
     {
         float circumference { get; set; }
-        void Perimeter();
-        
+        void Perimeter();       
     }
     public class TotalPerimeter 
     {
@@ -15,7 +14,7 @@ namespace Tri_Wizard_Interview_Task_Script
 
         float TotalP(IShapes ishap, IShapes ishape)
         {
-		return	ishap.circumference;
+		return circumference;
         }
     }
 
@@ -98,8 +97,6 @@ namespace Tri_Wizard_Interview_Task_Script
     {
         static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            
             Circle circle01 = new Circle(3f);//radius
 
             circle01.Perimeter();//this is how you are calling these methods
@@ -115,8 +112,7 @@ namespace Tri_Wizard_Interview_Task_Script
             Console.WriteLine("The total perimeter of all shapes is: " + (circle01.circumference + triangle01.circumference + rectangle01.circumference));
             //i removed (circle01.perimeter + circle02.perimeter)
                                 
-            Console.ReadKey();
-            
+            Console.ReadKey();            
         }
     }
 }
