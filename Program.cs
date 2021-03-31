@@ -120,9 +120,12 @@ namespace Tri_Wizard_Interview_Task_Script
 
             var shapes = new List<IShapes>();
 
-            shapes.Add(new Circle ( 3f));
+            shapes.Add(new Circle(3f));
             shapes.Add(new Triangle(2f, 3f, 5f));
             shapes.Add(new Rectangle(10f, 5f));
+            shapes.Add(circle01);
+            shapes.Add(triangle01);
+            shapes.Add(rectangle01);
 
             for (var i = 0; i < shapes.Count; i++)
             {
