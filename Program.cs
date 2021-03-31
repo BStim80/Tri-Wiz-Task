@@ -1,27 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Tri_Wizard_Interview_Task_Script //working out git bash kinks 2
-{
-    interface IShapes//todo: add a list, polymorphism, interface and refactor code
+namespace Tri_Wizard_Interview_Task_Script
+{//user input: circle - radius, triangle - all 3 sides, rectangle - length, width
+    interface IShapes//todo: 
     {
-        float circumference { get; set; }
+        void Input();
         void Perimeter();       
     }
-    public class TotalPerimeter 
-    {
-        public float circumference;
 
-        float TotalP(IShapes ishap, IShapes ishape)
+    class TotalPerimeter 
+    {
+        float TotalP(IShapes ishape, IShapes ishap)
         {
-		return circumference;
+		    return 0; 
         }
     }
 
     public class Circle : IShapes // P = tau * radius
     {
-        public float circumference { get; set; }//i removed public keyword from all three of these variables
-        public float radius;//radius and tau are declaring the circle class
+        public float circumference { get; set; }
+        public float radius;
         public const float tau = 6.28f;
         
 
@@ -31,7 +30,12 @@ namespace Tri_Wizard_Interview_Task_Script //working out git bash kinks 2
             this.circumference = tau * radius;           
         }
 
-        public void Perimeter()//testing git bash
+        public void Input() 
+        {
+            Console.WriteLine("What is the length of the radius in your circle?");
+        }
+
+        public void Perimeter()
         {
             Console.WriteLine("Perimeter of circle is " + circumference);    
         }        
@@ -43,7 +47,7 @@ namespace Tri_Wizard_Interview_Task_Script //working out git bash kinks 2
         public float sideB;
         public float sideC;
 
-        public float circumference { get; set; }
+        public float tPerimeter { get; set; }
 
         
         public Triangle(float sideA, float sideB, float sideC)
@@ -51,7 +55,7 @@ namespace Tri_Wizard_Interview_Task_Script //working out git bash kinks 2
             this.sideA = sideA;
             this.sideB = sideB;
             this.sideC = sideC;
-            this.circumference = sideA + sideB + sideC;
+            this.tPerimeter = sideA + sideB + sideC;
         }
 
         public void Input() 
@@ -62,7 +66,7 @@ namespace Tri_Wizard_Interview_Task_Script //working out git bash kinks 2
 
         public void Perimeter()
         {
-            Console.WriteLine("Perimeter of triangle is " + circumference);
+            Console.WriteLine("Perimeter of triangle is " + tPerimeter);
         }
 
 
@@ -72,13 +76,13 @@ namespace Tri_Wizard_Interview_Task_Script //working out git bash kinks 2
     {
         public float length;
         public float width;
-        public float circumference { get; set; }
+        public float rPerimeter { get; set; }
 
         public Rectangle(float length, float width)
         {
             this.length = length;
             this.width = width;
-            this.circumference = 2 * (length + width);
+            this.rPerimeter = 2 * (length + width);
         }
 
         public void Input() 
@@ -89,7 +93,7 @@ namespace Tri_Wizard_Interview_Task_Script //working out git bash kinks 2
 
         public void Perimeter()
         {
-            Console.WriteLine("Perimeter of rectangle is " + circumference);
+            Console.WriteLine("Perimeter of rectangle is " + rPerimeter);
         }
     }
 
@@ -97,6 +101,9 @@ namespace Tri_Wizard_Interview_Task_Script //working out git bash kinks 2
     {
         static void Main(string[] args)
         {
+
+            Console.ForegroundColor = ConsoleColor.Green;
+
             Circle circle01 = new Circle(3f);//radius
 
             circle01.Perimeter();//this is how you are calling these methods
@@ -109,8 +116,9 @@ namespace Tri_Wizard_Interview_Task_Script //working out git bash kinks 2
 
             rectangle01.Perimeter();
 
-            Console.WriteLine("The total perimeter of all shapes is: " + (circle01.circumference + triangle01.circumference + rectangle01.circumference));
-            //i removed (circle01.perimeter + circle02.perimeter)
+            var totalPerimeter = new TotalPerimeter();
+
+            Console.WriteLine("The total perimeter of all shapes is: " + (circle01.circumference + triangle01.tPerimeter + rectangle01.rPerimeter));
                                 
             Console.ReadKey();            
         }
