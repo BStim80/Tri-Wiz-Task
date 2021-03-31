@@ -118,6 +118,17 @@ namespace Tri_Wizard_Interview_Task_Script
 
             var totalPerimeter = new TotalPerimeter();
 
+            var shapes = new List<IShapes>();
+
+            shapes.Add(new Circle ( 3f));
+            shapes.Add(new Triangle(2f, 3f, 5f));
+            shapes.Add(new Rectangle(10f, 5f));
+
+            for (var i = 0; i < shapes.Count; i++)
+            {
+                Console.WriteLine(shapes[i]);
+            }
+
             Console.WriteLine("The total perimeter of all shapes is: " + (circle01.circumference + triangle01.tPerimeter + rectangle01.rPerimeter));
                                 
             Console.ReadKey();            
