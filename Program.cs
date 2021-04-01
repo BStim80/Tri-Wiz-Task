@@ -11,9 +11,14 @@ namespace Tri_Wizard_Interview_Task_Script
 
     class TotalPerimeter 
     {
-        float TotalP(IShapes ishape, IShapes ishap)
+        float TotalP(List<IShapes> shapes)
         {
-		    return 0; 
+            float totalPerimeter = 0;
+            foreach(var shape in Shapes)
+            {
+                totalPerimeter = totalPerimeter + shape.Perimeter(); // totalPerimeter += shape.Perimeter();
+            }
+            return totalPerimeter;
         }
     }
 
@@ -115,22 +120,6 @@ namespace Tri_Wizard_Interview_Task_Script
             Rectangle rectangle01 = new Rectangle(10f, 5f);//length, width
 
             rectangle01.Perimeter();
-
-            var totalPerimeter = new TotalPerimeter();
-
-            var shapes = new List<IShapes>();
-
-            shapes.Add(new Circle(3f));
-            shapes.Add(new Triangle(2f, 3f, 5f));
-            shapes.Add(new Rectangle(10f, 5f));
-            shapes.Add(circle01);
-            shapes.Add(triangle01);
-            shapes.Add(rectangle01);
-
-            for (var i = 0; i < shapes.Count; i++)
-            {
-                Console.WriteLine(shapes[i]);
-            }
 
             Console.WriteLine("The total perimeter of all shapes is: " + (circle01.circumference + triangle01.tPerimeter + rectangle01.rPerimeter));
                                 
