@@ -1,3 +1,2 @@
 /obj
-/.vscode/launch.json
-/bin
+/**/bin/**/*
