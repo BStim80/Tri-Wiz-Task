@@ -19,31 +19,27 @@ namespace Tri_Wizard_Interview_Task_Script
     {
         float TotalP()
         { 
-            List<object> Shapes = new List<object>();
+            List<object> IShapes = new List<object>();
 
             Circle circle01 = new Circle(3f);//radius
 
-            circle01.Perimeter();//this is how you are calling these methods
-
             Triangle triangle01 = new Triangle(2f, 3f, 5f);//length of sides a, b, c
-
-            triangle01.Perimeter();
            
             Rectangle rectangle01 = new Rectangle(10f, 5f);//length, width
-
-            rectangle01.Perimeter();
             
-            Shapes.Add(circle01.circumference);
-            Shapes.Add(triangle01.tPerimeter);
-            Shapes.Add(rectangle01.rPerimeter);
+            IShapes.Add(circle01);
+            IShapes.Add(triangle01);
+            IShapes.Add(rectangle01);
 
             float totalPerimeter = 0;
 
-            foreach(var shape in Shapes)
+            foreach(var shape in IShapes)
             {
-                totalPerimeter = totalPerimeter + Shapes.Perimeter(); // totalPerimeter += shape.Perimeter();
+                totalPerimeter = totalPerimeter + IShapes.Perimeter(); // totalPerimeter += shape.Perimeter();
             }
             return totalPerimeter;
+
+            
         }
     }
 
