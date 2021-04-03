@@ -17,8 +17,12 @@ namespace Tri_Wizard_Interview_Task_Script
 
     class TotalPerimeter 
     {
-        float TotalP(List<IShapes> shapes)
+        float TotalP()
         { 
+            List<float> Shapes = new List<float>();
+
+            Shapes.Add();
+
             float totalPerimeter = 0;
 
             foreach(var shape in Shapes)
