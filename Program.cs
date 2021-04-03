@@ -8,6 +8,12 @@ namespace Tri_Wizard_Interview_Task_Script
         void Input();
         void Perimeter();       
     }
+//make a list to hold the variables from my constructors(circle, triangle, rectangle). 
+//make foreach loop to run through the list until the end
+//Then, do console.writeline or return totalPerimeter: the value of all of the elements in the list added up = total perimeter of all shapes
+
+//try making a foreach loop that holds each of the constructors. 
+//then, put an if statement inside of the loop that will check each conctructor for the circumference and add them all up at the end 
 
     class TotalPerimeter 
     {
