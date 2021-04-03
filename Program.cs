@@ -23,6 +23,8 @@ namespace Tri_Wizard_Interview_Task_Script
 
             Circle circle01 = new Circle(3f);//radius
 
+            circle01.Perimeter();
+
             Triangle triangle01 = new Triangle(2f, 3f, 5f);//length of sides a, b, c
            
             Rectangle rectangle01 = new Rectangle(10f, 5f);//length, width
