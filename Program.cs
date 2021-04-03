@@ -5,7 +5,6 @@ namespace Tri_Wizard_Interview_Task_Script
 {//user input: circle - radius, triangle - all 3 sides, rectangle - length, width
     interface IShapes//todo: 
     {
-        void Input();
         void Perimeter();       
     }
 //make a list to hold the variables from my constructors(circle, triangle, rectangle). 
@@ -22,8 +21,6 @@ namespace Tri_Wizard_Interview_Task_Script
             List<object> IShapes = new List<object>();
 
             Circle circle01 = new Circle(3f);//radius
-
-            circle01.Perimeter();
 
             Triangle triangle01 = new Triangle(2f, 3f, 5f);//length of sides a, b, c
            
