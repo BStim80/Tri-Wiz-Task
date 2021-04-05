@@ -33,7 +33,7 @@ namespace Tri_Wizard_Interview_Task_Script
             foreach(var shape in IShapes)
             {
                 totalPerimeter = totalPerimeter + IShapes.Perimeter(); // totalPerimeter += shape.Perimeter();
-            }
+            }//Circle.Perimeter() + Triangle.Perimeter() + Rectangle.Perimeter()
             return totalPerimeter;
 
             
