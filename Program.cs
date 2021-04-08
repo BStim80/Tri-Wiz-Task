@@ -2,46 +2,30 @@
 using System.Collections.Generic;
 
 namespace Tri_Wizard_Interview_Task_Script
-{   //before pasting in Dima's code
-    //user input: circle - radius, triangle - all 3 sides, rectangle - length, width
-    interface IShapes//todo: 
+
+{//user input: circle - radius, triangle - all 3 sides, rectangle - length, width
+    interface IShape//todo: 
     {
-        void Perimeter();       
+        void Input();
+        float Perimeter();       
     }
-//make a list to hold the variables from my constructors(circle, triangle, rectangle). 
-//make foreach loop to run through the list until the end
-//Then, do console.writeline or return totalPerimeter: the value of all of the elements in the list added up = total perimeter of all shapes
 
-
-    class TotalPerimeter
+  static class TotalPerimeter 
     {
-        float TotalP()
+      public static float TotalP(List<IShape> shapes)
         { 
-            List<object> IShapes = new List<object>();
-
-            Circle circle01 = new Circle(3f);//radius
-
-            Triangle triangle01 = new Triangle(2f, 3f, 5f);//length of sides a, b, c
-           
-            Rectangle rectangle01 = new Rectangle(10f, 5f);//length, width
-            
-            IShapes.Add(circle01);
-            IShapes.Add(triangle01);
-            IShapes.Add(rectangle01);
 
             float totalPerimeter = 0;
 
-            foreach(var shape in IShapes)
+            foreach(IShape shape in shapes)
             {
-                totalPerimeter = totalPerimeter + Circle.Perimeter(); // totalPerimeter += shape.Perimeter();
+                totalPerimeter = totalPerimeter + shape.Perimeter(); // totalPerimeter += shape.Perimeter();
             }//Circle.Perimeter() + Triangle.Perimeter() + Rectangle.Perimeter()
             return totalPerimeter;
-
-            
         }
     }
-
-    public class Circle : IShapes // P = tau * radius
+    
+    public class Circle : IShape // P = tau * radius
     {
         public float circumference { get; set; }
         public float radius;
@@ -59,13 +43,13 @@ namespace Tri_Wizard_Interview_Task_Script
             Console.WriteLine("What is the length of the radius in your circle?");
         }
 
-        public void Perimeter()
+        public float Perimeter()
         {
             Console.WriteLine("Perimeter of circle is " + circumference);    
         }        
     }
 
-    public class Triangle : IShapes// P = a + b + c
+    public class Triangle : IShape// P = a + b + c
     {
         public float sideA;
         public float sideB;
@@ -88,7 +72,7 @@ namespace Tri_Wizard_Interview_Task_Script
         }
         
 
-        public void Perimeter()
+        public float Perimeter()
         {
             Console.WriteLine("Perimeter of triangle is " + tPerimeter);
         }
@@ -96,7 +80,7 @@ namespace Tri_Wizard_Interview_Task_Script
 
     }
 
-    public class Rectangle : IShapes// P = 2(L + W)
+    public class Rectangle : IShape// P = 2(L + W)
     {
         public float length;
         public float width;
@@ -115,7 +99,7 @@ namespace Tri_Wizard_Interview_Task_Script
         }
         
 
-        public void Perimeter()
+        public float Perimeter()
         {
             Console.WriteLine("Perimeter of rectangle is " + rPerimeter);
         }
@@ -130,17 +114,18 @@ namespace Tri_Wizard_Interview_Task_Script
 
             Circle circle01 = new Circle(3f);//radius
 
-            circle01.Perimeter();//this is how you are calling these methods
-
             Triangle triangle01 = new Triangle(2f, 3f, 5f);//length of sides a, b, c
 
-            triangle01.Perimeter();
+            // Rectangle rectangle01 = new Rectangle(10f, 5f);//length, width
 
-            Rectangle rectangle01 = new Rectangle(10f, 5f);//length, width
+            var shapes = new List<IShape>();
+            shapes.Add(circle01);
+            shapes.Add(triangle01);
+            // shapes.Add(rectangle01);
 
-            rectangle01.Perimeter();
+            var totalPermeter = TotalPerimeter.TotalP(shapes);
 
-            Console.WriteLine("The total perimeter of all shapes is: " + (circle01.circumference + triangle01.tPerimeter + rectangle01.rPerimeter));
+            Console.WriteLine("The total perimeter of all shapes is: " + totalPermeter);
                                 
             Console.ReadKey();            
         }
