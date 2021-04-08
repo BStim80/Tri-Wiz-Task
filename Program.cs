@@ -116,6 +116,7 @@ namespace Tri_Wizard_Interview_Task_Script
             Console.ForegroundColor = ConsoleColor.Green;
 
             Circle circle01 = new Circle(3f);//radius
+            Circle circle02 = new Circle(10f);
 
             Triangle triangle01 = new Triangle(2f, 3f, 5f);//length of sides a, b, c
 
@@ -123,6 +124,7 @@ namespace Tri_Wizard_Interview_Task_Script
 
             var shapes = new List<IShape>();
             shapes.Add(circle01);
+            shapes.Add(circle02);
             shapes.Add(triangle01);
             shapes.Add(rectangle01);
             // shapes.Add(rectangle01);
