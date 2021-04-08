@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 
 namespace Tri_Wizard_Interview_Task_Script
-{//user input: circle - radius, triangle - all 3 sides, rectangle - length, width
+{   //before pasting in Dima's code
+    //user input: circle - radius, triangle - all 3 sides, rectangle - length, width
     interface IShapes//todo: 
     {
         void Perimeter();       
@@ -12,7 +13,7 @@ namespace Tri_Wizard_Interview_Task_Script
 //Then, do console.writeline or return totalPerimeter: the value of all of the elements in the list added up = total perimeter of all shapes
 
 
-    class TotalPerimeter 
+    class TotalPerimeter
     {
         float TotalP()
         { 
@@ -32,7 +33,7 @@ namespace Tri_Wizard_Interview_Task_Script
 
             foreach(var shape in IShapes)
             {
-                totalPerimeter = totalPerimeter + IShapes.Perimeter(); // totalPerimeter += shape.Perimeter();
+                totalPerimeter = totalPerimeter + Circle.Perimeter(); // totalPerimeter += shape.Perimeter();
             }//Circle.Perimeter() + Triangle.Perimeter() + Rectangle.Perimeter()
             return totalPerimeter;
 
