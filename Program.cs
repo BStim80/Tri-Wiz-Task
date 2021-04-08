@@ -45,7 +45,8 @@ namespace Tri_Wizard_Interview_Task_Script
 
         public float Perimeter()
         {
-            Console.WriteLine("Perimeter of circle is " + circumference);    
+            Console.WriteLine("Perimeter of circle is " + circumference); 
+            return circumference;   
         }        
     }
 
@@ -75,6 +76,7 @@ namespace Tri_Wizard_Interview_Task_Script
         public float Perimeter()
         {
             Console.WriteLine("Perimeter of triangle is " + tPerimeter);
+            return tPerimeter;
         }
 
 
@@ -102,6 +104,7 @@ namespace Tri_Wizard_Interview_Task_Script
         public float Perimeter()
         {
             Console.WriteLine("Perimeter of rectangle is " + rPerimeter);
+            return rPerimeter;
         }
     }
 
@@ -116,11 +119,12 @@ namespace Tri_Wizard_Interview_Task_Script
 
             Triangle triangle01 = new Triangle(2f, 3f, 5f);//length of sides a, b, c
 
-            // Rectangle rectangle01 = new Rectangle(10f, 5f);//length, width
+            Rectangle rectangle01 = new Rectangle(10f, 5f);//length, width
 
             var shapes = new List<IShape>();
             shapes.Add(circle01);
             shapes.Add(triangle01);
+            shapes.Add(rectangle01);
             // shapes.Add(rectangle01);
 
             var totalPermeter = TotalPerimeter.TotalP(shapes);
