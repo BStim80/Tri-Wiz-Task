@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace Tri_Wizard_Interview_Task_Script
 
-{//user input: circle - radius, triangle - all 3 sides, rectangle - length, width
-    interface IShape//todo: 
+{
+    interface IShape
     {
         void Input();
         float Perimeter();       
@@ -19,8 +19,8 @@ namespace Tri_Wizard_Interview_Task_Script
 
             foreach(IShape shape in shapes)
             {
-                totalPerimeter = totalPerimeter + shape.Perimeter(); // totalPerimeter += shape.Perimeter();
-            }//Circle.Perimeter() + Triangle.Perimeter() + Rectangle.Perimeter()
+                totalPerimeter = totalPerimeter + shape.Perimeter(); 
+            }
             return totalPerimeter;
         }
     }
